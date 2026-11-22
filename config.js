@@ -46,6 +46,21 @@ window.GB_CONFIG = {
     { name: "GB Ultrasmash", desc: "Dois discos esmagados na chapa, queijo prato duplo, alface, tomate e cebola roxa.", price: "", image: "assets/menu/ultrasmash.webp" },
   ],
 
+  /* ---------------- AVALIAÇÕES DO GOOGLE ----------------
+     Copiadas do perfil no Google Maps em 22/11/2026 (trechos de avaliações 5 estrelas).
+     Atualize a nota e o total de vez em quando. */
+  reviews: {
+    rating: "4,9",
+    count: "2.571",
+    items: [
+      { name: "Fernanda T.", text: "Experiência maravilhosa do começo ao fim! Tudo estava impecável: o lanche delicioso, a sobremesa simplesmente maravilhosa e o atendimento nota mil!" },
+      { name: "Ziraldo G.", text: "Hambúrguer de excelente qualidade (excelente mesmo!), batata muito boa. Lugar para transformar em rotina." },
+      { name: "Luane M.", text: "O hambúrguer é um dos melhores de João Pessoa, tem opções diferentes do comum, os acompanhamentos são gostosos, bebidas também." },
+      { name: "Anabelly R.", text: "O hambúrguer estava MUUITOOO saboroso, com ingredientes de qualidade e uma boa combinação de sabores, amamos demais!" },
+      { name: "Thais P.", text: "Comida excelente e muito farta. Fomos atendidos por Luana, que nos proporcionou uma ótima experiência do local!" },
+    ],
+  },
+
   tracking: {
     ga4Id: "",       // ex.: "G-XXXXXXXXXX"
     metaPixelId: "", // o site de pedidos já usa um Pixel; se quiser o mesmo aqui, cole o ID

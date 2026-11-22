@@ -86,7 +86,7 @@
   // feedback de toque (iOS precisa de um listener touchstart para :active funcionar)
   doc.addEventListener("touchstart", function () {}, { passive: true });
   doc.addEventListener("pointerdown", function (e) {
-    var b = e.target.closest && e.target.closest(".cta,.row,.way,.pill,.item,.sticky-bar a,.parma,.social a,.top-cta");
+    var b = e.target.closest && e.target.closest(".cta,.row,.way,.pill,.item,.rv-all,.g-chip,.sticky-bar a,.parma,.social a,.top-cta");
     if (!b) return;
     b.classList.add("pressed");
     if (navigator.vibrate) { try { navigator.vibrate(8); } catch (x) {} }
@@ -133,6 +133,23 @@
         '<div class="foot"><span class="price">' + esc(it.price) + '</span><span class="go">Pedir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>';
     }).join("");
     wireLinks("#menu");
+  })();
+
+  /* ---------------- 4b. Avaliações do Google ---------------- */
+  (function () {
+    var R = C.reviews;
+    if (!R) return;
+    document.querySelectorAll(".js-rating").forEach(function (e) { if (R.rating) e.textContent = R.rating; });
+    document.querySelectorAll(".js-count").forEach(function (e) { if (R.count) e.textContent = R.count; });
+    var box = $("#reviewList");
+    if (!box || !R.items || !R.items.length) return;
+    var esc = function (s) { return String(s || "").replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+    var star = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg>';
+    var stars = '<span class="stars" role="img" aria-label="5 estrelas">' + star + star + star + star + star + "</span>";
+    box.innerHTML = R.items.map(function (r) {
+      return '<figure class="rv">' + stars + "<blockquote>“" + esc(r.text) + "”</blockquote>" +
+        "<figcaption><i>" + esc(r.name).charAt(0).toUpperCase() + "</i><span><b>" + esc(r.name) + "</b>Avaliação no Google</span></figcaption></figure>";
+    }).join("");
   })();
 
   /* ---------------- 5. Barra fixa ---------------- */

@@ -39,6 +39,10 @@ FCP 1,0 s · LCP 1,7 s · CLS 0,003. Depois de trocar as fotos, mantenha os peso
 
 São 4 cenas: três fotos quadradas (`assets/scene-1.webp`, `scene-2.webp`, `scene-3.webp`, lista em `stack.scenes`) que trocam e aproximam com o scroll, e o combo (`assets/combo.webp`) no final. Para trocar uma foto, basta sobrescrever o arquivo.
 
+## Avaliações do Google
+
+A seção "Quem provou, aprovou" mostra a nota (4,9), o total de avaliações (2.571) e 5 trechos de avaliações 5 estrelas copiados do Google Maps em 22/11/2026 (nomes abreviados). O selo "4,9 no Google" na capa leva até ela. Para atualizar, edite `reviews` no `config.js`.
+
 ## Como chegar
 
 Os botões Google Maps, Waze e Uber usam as coordenadas da loja no Google Maps (-7.1102761, -34.8547226). Os links ficam em `links.maps`, `links.waze` e `links.uber` no `config.js`.
