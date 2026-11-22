@@ -86,7 +86,7 @@
   // feedback de toque (iOS precisa de um listener touchstart para :active funcionar)
   doc.addEventListener("touchstart", function () {}, { passive: true });
   doc.addEventListener("pointerdown", function (e) {
-    var b = e.target.closest && e.target.closest(".cta,.row,.way,.pill,.item,.rv-all,.g-chip,.sticky-bar a,.parma,.social a,.top-cta");
+    var b = e.target.closest && e.target.closest(".cta,.row,.way,.pill,.item,.rv-all,.g-chip,.made-by,.sticky-bar a,.parma,.social a,.top-cta");
     if (!b) return;
     b.classList.add("pressed");
     if (navigator.vibrate) { try { navigator.vibrate(8); } catch (x) {} }

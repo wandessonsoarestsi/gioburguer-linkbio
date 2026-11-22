@@ -191,6 +191,9 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;op
 /* ---------- RODAPÉ ---------- */
 footer{padding:40px 0 calc(110px + env(safe-area-inset-bottom));text-align:center;font-size:14px;color:rgba(229,199,154,.8)}
 footer .display{font-size:44px;color:var(--creme);margin-bottom:8px}
+.made-by{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:10px 14px;border-radius:99px;border:1px solid rgba(229,199,154,.18);font-size:12px;letter-spacing:.04em;color:rgba(229,199,154,.8);transition:transform .12s ease,color .2s}
+.made-by svg{height:15px;width:auto;color:var(--creme)}
+.made-by:active,.made-by.pressed{transform:scale(.97)}
 .social{display:flex;justify-content:center;gap:12px;margin:22px 0}
 .social a{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:var(--bordo);border:1px solid rgba(229,199,154,.15);transition:transform .12s ease}
 .social a:active,.social a.pressed{transform:scale(.92)}
@@ -339,6 +342,7 @@ footer .small{font-size:12px;margin-top:18px;color:rgba(229,199,154,.8)}
     <address id="address">Av. Acre, 109 • Estados, João Pessoa – PB</address>
     <div>Todos os dias, das 17h às 23h • Delivery, salão e take away</div>
     <p class="small">Entre as 100 melhores hamburguerias do Brasil • 2026</p>
+    <a class="made-by" href="https://won-site.vercel.app/?utm_source=gioburger&amp;utm_medium=linkbio&amp;utm_campaign=credito" target="_blank" rel="noopener" data-track="credito_won" aria-label="Site desenvolvido pela wOn Tecnologia"><span>Site desenvolvido por</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 56" width="70" height="16" aria-hidden="true" focusable="false"><g transform="translate(0 0) scale(0.7)"><rect x="0" y="0" width="35" height="35" rx="8" fill="currentColor"/><rect x="0" y="45" width="35" height="35" rx="8" fill="currentColor"/><rect x="45" y="45" width="35" height="35" rx="8" fill="currentColor"/><circle cx="62.5" cy="17.5" r="18.5" fill="currentColor"/></g><g transform="translate(78 -14)"><polyline points="5,35 16,65 28,39 40,65 51,35" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><circle cx="94" cy="42" r="23" fill="none" stroke="currentColor" stroke-width="10"/><path d="M136 65 V48 A13 13 0 0 1 162 48 V65" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a>
   </footer>
 </div>
 
