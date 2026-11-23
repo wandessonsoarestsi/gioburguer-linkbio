@@ -236,11 +236,13 @@
     var WIN = [[0, .3], [.3, .56], [.56, .8]];
     function drawPhoto(im, alpha, t, leave) {
       if (!im || !im.complete || !im.naturalWidth || alpha <= 0) return;
-      var base = staticMode ? W : Math.min(W * 1.04, H * .64);
+      var wide = !staticMode && W >= 960 && W > H;
+      var base = staticMode ? W : wide ? Math.min(H * .8, W * .46) : Math.min(W * 1.04, H * .64);
       var s = base * (1.06 + .14 * t);
-      var x = (W - s) / 2, y = staticMode ? 0 : H - base - H * .05 - (s - base) / 2 - H * .3 * leave;
+      var x = wide ? W * .5 + (Math.min(W, 1280) * .5 - s) / 2 : (W - s) / 2;
+      var y = staticMode ? 0 : wide ? (H - base) / 2 + H * .04 - (s - base) / 2 - H * .3 * leave : H - base - H * .05 - (s - base) / 2 - H * .3 * leave;
       ctx.globalAlpha = alpha;
-      ctx.fillStyle = im._bg || "#222"; ctx.fillRect(x + 2, y + s * .3, s - 4, H);
+      if (!wide) { ctx.fillStyle = im._bg || "#222"; ctx.fillRect(x + 2, y + s * .3, s - 4, H); }
       ctx.drawImage(im, x, y, s, s);
       if (!staticMode) {
         var tf = ctx.createLinearGradient(0, y - 1, 0, y + s * .38);
